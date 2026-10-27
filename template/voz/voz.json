@@ -1,0 +1,50 @@
+[
+ {
+  "i": 1,
+  "t0": 0.4,
+  "dur": 4.12,
+  "fin": 4.52,
+  "max": 4.3,
+  "texto": "Todo empieza leyendo: entender qué hay que construir, y por qué."
+ },
+ {
+  "i": 2,
+  "t0": 5.3,
+  "dur": 4.57,
+  "fin": 9.87,
+  "max": 4.2,
+  "texto": "Después, la arquitectura: cada pieza en su lugar antes de programar."
+ },
+ {
+  "i": 3,
+  "t0": 11.0,
+  "dur": 4.4,
+  "fin": 15.4,
+  "max": 4.4,
+  "texto": "Luego, el código. Línea por línea, claro y con intención."
+ },
+ {
+  "i": 4,
+  "t0": 16.5,
+  "dur": 4.3,
+  "fin": 20.8,
+  "max": 4.3,
+  "texto": "Si una prueba falla, se arregla. Hasta que todo sale en verde."
+ },
+ {
+  "i": 5,
+  "t0": 21.5,
+  "dur": 4.86,
+  "fin": 26.36,
+  "max": 4.2,
+  "texto": "Y antes de salir, seguridad: revisar cada rincón y cerrar cada puerta."
+ },
+ {
+  "i": 6,
+  "t0": 26.4,
+  "dur": 3.08,
+  "fin": 29.48,
+  "max": 3.0,
+  "texto": "Listo. A producción… y a empezar de nuevo."
+ }
+]

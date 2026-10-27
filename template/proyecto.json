@@ -1,0 +1,101 @@
+{
+ "title": "Clawd enseña",
+ "w": 1080,
+ "h": 1920,
+ "dur": 30,
+ "voz": {
+  "descripcion": "Voz masculina joven, mexicana, cálida y cercana, con sonrisa en la voz, ritmo ágil y claro, como narrador de un video de tecnología.",
+  "ref_texto": "Hola, soy el narrador de este video. Hoy te voy a contar cómo se construye un buen software, paso a paso.",
+  "idioma": "Spanish",
+  "seed": 7,
+  "tomas": 3
+ },
+ "lineas": [
+  {
+   "t0": 0.4,
+   "max": 4.3,
+   "texto": "Todo empieza leyendo: entender qué hay que construir, y por qué.",
+   "sub": [
+    "Todo empieza leyendo:",
+    "entender qué hay que construir, y por qué."
+   ]
+  },
+  {
+   "t0": 5.3,
+   "max": 4.2,
+   "texto": "Después, la arquitectura: cada pieza en su lugar antes de programar.",
+   "sub": [
+    "Después, la arquitectura:",
+    "cada pieza en su lugar antes de programar."
+   ]
+  },
+  {
+   "t0": 11.0,
+   "max": 4.4,
+   "texto": "Luego, el código. Línea por línea, claro y con intención.",
+   "sub": [
+    "Luego, el código.",
+    "Línea por línea, claro y con intención."
+   ]
+  },
+  {
+   "t0": 16.5,
+   "max": 4.3,
+   "texto": "Si una prueba falla, se arregla. Hasta que todo sale en verde.",
+   "sub": [
+    "Si una prueba falla, se arregla.",
+    "Hasta que todo sale en verde."
+   ]
+  },
+  {
+   "t0": 21.5,
+   "max": 4.2,
+   "texto": "Y antes de salir, seguridad: revisar cada rincón y cerrar cada puerta.",
+   "sub": [
+    "Y antes de salir, seguridad:",
+    "revisar cada rincón y cerrar cada puerta."
+   ]
+  },
+  {
+   "t0": 26.4,
+   "max": 3.0,
+   "texto": "Listo. A producción… y a empezar de nuevo.",
+   "sub": [
+    "¡Listo! A producción…",
+    "y a empezar de nuevo."
+   ]
+  }
+ ],
+ "fases": [
+  {
+   "t0": 0,
+   "t1": 5,
+   "rotulo": "01 · LEER"
+  },
+  {
+   "t0": 5,
+   "t1": 10,
+   "rotulo": "02 · ARQUITECTURA"
+  },
+  {
+   "t0": 10,
+   "t1": 16,
+   "rotulo": "03 · CÓDIGO"
+  },
+  {
+   "t0": 16,
+   "t1": 21,
+   "rotulo": "04 · PRUEBAS"
+  },
+  {
+   "t0": 21,
+   "t1": 26,
+   "rotulo": "05 · SEGURIDAD"
+  },
+  {
+   "t0": 26,
+   "t1": 30,
+   "rotulo": "06 · DEPLOY"
+  }
+ ]
+}

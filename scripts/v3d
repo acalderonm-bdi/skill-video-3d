@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# v3d — todo el ciclo en esta máquina (sin red al renderizar).  Uso:  v3d <comando> [args]  (dentro del proyecto, salvo «nuevo»)
+#   nuevo DIR            proyecto desde la plantilla (maestro + equipo, 9:16 · cambiar w/h en proyecto.json para 16:9)
+#   voz                  narración Qwen3-TTS → voz/ + parts/05-vozenv.js        verificar   transcribe y compara cada línea
+#   build                arma index.html                                         stills "t1,t2" [ss sub]   + hoja stills/_sheet.jpg
+#   medir                contacto/vidrio/velocidad de cámara                    preview     render rápido (1x, sin blur) → preview.mp4
+#   final                render final (2x + motion blur 8 subcuadros) → final.mp4
+set -euo pipefail
+SK="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; ROOT="${VIDEO3D_HOME:-$HOME/.video3d}"
+[ -f "$ROOT/env.sh" ] && . "$ROOT/env.sh"
+export PATH="$ROOT/bin:$PATH" HF_HUB_OFFLINE=${HF_HUB_OFFLINE:-1}
+R="$ROOT/render/bin/python"; T="$ROOT/tts/bin/python"; S="$SK/scripts"
+cmd=${1:-ayuda}; shift || true
+case $cmd in
+  nuevo) D=${1:?falta carpeta}; mkdir -p "$D"; cp -R "$SK/template/." "$D/"; echo "proyecto en $D — edita proyecto.json y parts/";;
+  voz) "$T" "$S/voz.py";;
+  verificar) "$T" "$S/asr.py";;
+  build) python3 "$S/build.py" .;;
+  stills) python3 "$S/build.py" . >/dev/null; rm -f stills/t*.png; "$R" "$S/shot.py" "${1:-}" "${2:-1}" "${3:-1}"; "$R" "$S/sheet.py";;
+  medir) python3 "$S/build.py" . >/dev/null; "$R" "$S/shot.py" "" 1 1 --measure | tail -1;;
+  subs) python3 "$S/subs.py";;
+  preview) python3 "$S/build.py" . >/dev/null; python3 "$S/subs.py" >/dev/null; rm -rf prev; "$R" "$S/render.py" prev 1 1 --audio; bash "$S/mux.sh" prev preview.mp4 18;;
+  final) python3 "$S/build.py" . >/dev/null; python3 "$S/subs.py" >/dev/null; "$R" "$S/render.py" final_frames 2 8 --audio; bash "$S/mux.sh" final_frames final.mp4 14;;
+  *) sed -n '2,9p' "$0";;
+esac
